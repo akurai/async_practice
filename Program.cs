@@ -6,7 +6,7 @@ namespace async_practice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("halikaaa!");
+            Console.WriteLine("hello from home!");
         }
     }
 }

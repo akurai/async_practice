@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
@@ -87,17 +88,13 @@ namespace myLib
             Console.WriteLine("Pouring coffee");
             return new Coffee();
         }
-        class Coffee{}
-        class Egg{}
-        class Bacon{}
-        class Toast{}
-        class Juice{}
     }
     class AsyncronousProgram{
         private static int taskLength;
         
-        public static async Task Start(int length)
+        public static async Task<Breakfast> Start(int length)
         {
+            Breakfast breakfast = new Breakfast();
             taskLength = length;
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
@@ -128,7 +125,7 @@ namespace myLib
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready\n");
             Console.WriteLine("Breakfast is ready!\n");
-            
+            return breakfast;
         }
 
         static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
@@ -199,9 +196,10 @@ namespace myLib
             return new Coffee();
         }
     }
-        class Coffee { }
-        class Egg { }
-        class Bacon { }
-        class Toast { }
-        class Juice { }
+    class Coffee { }
+    class Egg { }
+    class Bacon { }
+    class Toast { }
+    class Juice { }
+    class Breakfast { }
 }
